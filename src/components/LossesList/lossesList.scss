@@ -1,0 +1,30 @@
+.losses__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column-gap: 15px;
+  grid-row-gap: 1em;
+  justify-content: space-evenly;
+
+  .losses__item{
+    border: 1px none;
+    border-radius: 25px;
+    display: flex;
+    width: 300px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.58);
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    &_img{
+      width: 40%;
+      margin: 15px;
+    }
+    .current__wrapper {
+      align-items: center;
+      display: flex;
+      .quantity {
+        color: rgba(0, 0, 0, 0.89);
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+}

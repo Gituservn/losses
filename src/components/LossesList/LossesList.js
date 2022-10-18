@@ -47,7 +47,7 @@ const LossesList = () => {
                 <div className="losses__item">
                     <img src={people} alt="" className="losses__item_img"/>
                     <div className="current__wrapper">
-                        <h2 className="current__title">{t(`Personnel units`)}</h2>
+                        <h2 className="current__title">{t(`Personnel units orks`)}</h2>
                         <p className="quantity">{data?.data.stats.personnel_units}</p>
                     </div>
                 </div>

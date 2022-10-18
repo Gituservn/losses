@@ -4,8 +4,9 @@
   grid-column-gap: 15px;
   grid-row-gap: 1em;
   justify-content: space-evenly;
+  padding-bottom: 50px;
 
-  .losses__item{
+  .losses__item {
     border: 1px none;
     border-radius: 25px;
     display: flex;
@@ -13,13 +14,19 @@
     height: 180px;
     background-color: rgba(255, 255, 255, 0.58);
 
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    &_img{
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    &_img {
       width: 40%;
       margin: 15px;
     }
+
     .current__wrapper {
       align-items: center;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       .quantity {
         color: rgba(0, 0, 0, 0.89);
         font-size: 30px;
@@ -27,4 +34,19 @@
       }
     }
   }
+}
+
+.change__lang {
+  display: flex;
+  margin: 0 !important;
+  align-items: end;
+}
+
+@media (min-width: 400px) {
+  .header__wrapper{
+    margin: 0 0 0 20px;
+  }
+ .title{
+   font-size: 30px;
+ }
 }

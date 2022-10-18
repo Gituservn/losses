@@ -77,6 +77,7 @@ const LossesList = () => {
     const onChange=(event)=>{
         i18n.changeLanguage(event.target.value)
     }
+
     const {
         data,
         loading,

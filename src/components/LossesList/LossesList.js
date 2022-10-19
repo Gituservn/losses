@@ -2,8 +2,11 @@ import React from 'react';
 import useFetch from "../../services/useFetch";
 import i18n from "i18next";
 import {initReactI18next, useTranslation} from "react-i18next";
-import {fadeIn} from "react-animations";
-import styled, { keyframes } from 'styled-components';
+import translationsEn from "../../locals/translationsEn";
+import translationsUk from "../../locals/translationsUk";
+import CountUp from "react-countup";
+import {CButtonGroup, CButton} from "@coreui/react";
+import '@coreui/coreui/dist/css/coreui.min.css';
 import './lossesList.scss';
 import people from '../../assets/icons/icon-people.svg';
 import art from '../../assets/icons/icon-art.svg';
@@ -21,48 +24,6 @@ import auto from '../../assets/icons/icon-auto.svg';
 import special from '../../assets/icons/icon-special.svg';
 import milLogo from "../../assets/images/mil-logo.svg";
 
-const translationsEn = {
-    Personnel_units: "Personnel units",
-    Artillery_systems: "Artillery systems",
-    Planes: "Planes",
-    Warships_cutters: "Warships / cutters",
-    ATGM_systems: "ATGM/SRBM systems",
-    Tanks: "Tanks",
-    MLRS: "Mlrs",
-    Helicopters: "Helicopters",
-    UAV_systems: "UAV systems",
-    Cruise_missiles: "Cruise missiles",
-    AFV: "AFV",
-    AA_warfare_systems: "AA warfare systems",
-    Vehicles_and_fuel_tanks: "Vehicles and fuel tanks",
-    Special_military_equip: "Special military equip.",
-    General:'General Staff of the Armed Forces of Ukraine',
-    Losses:'Total combat losses of the Russian occupier',
-    Day:'The day of the great war',
-    english: "English",
-    ukrainian: "Ukrainian"
-};
-const translationsUk = {
-    Personnel_units: "особового складу",
-    Artillery_systems: "арт. систем",
-    Planes: "літаків",
-    Warships_cutters: "кораблів/катерів",
-    ATGM_systems: "установок ОТРК/ТРК",
-    Tanks: "танків",
-    MLRS: "РСЗВ",
-    Helicopters: "гелікоптерів",
-    UAV_systems: "БПЛА",
-    Cruise_missiles: "крилатих ракет",
-    AFV: "ББМ",
-    AA_warfare_systems: "засобів ППО",
-    Vehicles_and_fuel_tanks: "автотехніки та автоцистерн",
-    Special_military_equip: "спец. техніки",
-    General:'Генеральний штаб ЗС України інформує',
-    Losses:'Загальні бойові втрати російського окупанта',
-    Day:'День великої війни',
-    english: "Англійська",
-    ukrainian: "Українська"};
-
 i18n.use(initReactI18next).init({
     resources: {
         en: {translation: translationsEn},
@@ -74,9 +35,10 @@ i18n.use(initReactI18next).init({
 });
 const LossesList = () => {
     const {t} = useTranslation();
-    const onChange=(event)=>{
-        i18n.changeLanguage(event.target.value)
-    }
+    const onChange = (event) => {
+        event.preventDefault();
+        i18n.changeLanguage(event.target.value);
+    };
 
     const {
         data,
@@ -87,77 +49,113 @@ const LossesList = () => {
     if (error) console.log('error');
 
 
-
     return (<>
             <div className="change__lang">
                 <select name="language" onChange={onChange}>
-                    <option value="ua">{t('ukrainian')}</option>
+                    <option type="" value="ua">{t('ukrainian')}</option>
                     <option value="en">{t('english')}</option>
                 </select>
+
             </div>
+
             <header className="App-header">
                 <div className="header__wrapper">
                     <p className="subtitle">{t('General')}</p>
                     <h1 className="title">{t('Losses')}</h1>
                     <div className="date">
                         <div>{data?.data.date}</div>
-                        <div className='day'>{data?.data.day} {t('Day')}</div>
+                        <div className="day">{data?.data.day} {t('Day')}</div>
                     </div>
                 </div>
-                <a href="https://www.mil.gov.ua/"><img src={milLogo} alt=""/></a>
+                <a href="https://www.mil.gov.ua/"><img src={milLogo}
+                                                       alt=""/></a>
             </header>
             <div className="container">
-
                 <div className="losses__list">
-
                     <div className="losses__item">
                         <img src={people} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Personnel_units')}</h2>
-                            <p className="quantity">{data?.data.stats.personnel_units}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.personnel_units}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={art} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Artillery_systems')}</h2>
-                            <p className="quantity">{data?.data.stats.artillery_systems}</p>
-
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.artillery_systems}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={plane} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Planes')}</h2>
-                            <p className="quantity">{data?.data.stats.planes}</p>
+
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.planes}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}/>
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={ship} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Warships_cutters')}</h2>
-                            <p className="quantity">{data?.data.stats.warships_cutters}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.warships_cutters}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={trk} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('ATGM_systems')}</h2>
-                            <p className="quantity">{data?.data.stats.atgm_srbm_systems}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.atgm_srbm_systems}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={tank} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Tanks')}</h2>
-                            <p className="quantity">{data?.data.stats.tanks}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.tanks}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={rszv} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('MLRS')}</h2>
-                            <p className="quantity">{data?.data.stats.mlrs}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.mlrs}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
@@ -165,49 +163,84 @@ const LossesList = () => {
                              className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Helicopters')}</h2>
-                            <p className="quantity">{data?.data.stats.helicopters}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.helicopters}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={bpla} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('UAV_systems')}</h2>
-                            <p className="quantity">{data?.data.stats.uav_systems}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.uav_systems}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={rocket} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Cruise_missiles')}</h2>
-                            <p className="quantity">{data?.data.stats.cruise_missiles}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.cruise_missiles}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={bbm} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('AFV')}</h2>
-                            <p className="quantity">{data?.data.stats.armoured_fighting_vehicles}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.armoured_fighting_vehicles}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={ppo} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('AA_warfare_systems')}</h2>
-                            <p className="quantity">{data?.data.stats.aa_warfare_systems}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.aa_warfare_systems}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={auto} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Vehicles_and_fuel_tanks')}</h2>
-                            <p className="quantity">{data?.data.stats.vehicles_fuel_tanks}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.vehicles_fuel_tanks}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                     <div className="losses__item">
                         <img src={special} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Special_military_equip')}</h2>
-                            <p className="quantity">{data?.data.stats.special_military_equip}</p>
+                            <CountUp className="quantity"
+                                     end={data?.data.stats.special_military_equip}
+                                     scrollSpyOnce={true}
+                                     enableScrollSpy={true}
+                                     duration={1}
+                            />
                         </div>
                     </div>
                 </div>

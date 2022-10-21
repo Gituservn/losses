@@ -1,7 +1,8 @@
 import React from 'react';
 import useFetch from "../../services/useFetch";
-import { useTranslation} from "react-i18next";
+import {useTranslation} from "react-i18next";
 import CountUp from "react-countup";
+import Typist from "react-typist";
 import '@coreui/coreui/dist/css/coreui.min.css';
 import './lossesList.scss';
 import people from '../../assets/icons/icon-people.svg';
@@ -38,15 +39,18 @@ const LossesList = () => {
             <div className="container">
                 <header className="App-header">
                     <div className="header__wrapper">
-                        <p className="subtitle">{t('General')}</p>
-                        <h1 className="title">{t('Losses')}</h1>
-                        <div className="date">
-                            <div>{data?.data.date}</div>
-                            <div className="day">{data?.data.day} {t('Day')}</div>
-                        </div>
+                        <Typist avgTypingDelay={90} stdTypingDelay={0}>
+                            <Typist.Delay ms={500}/>
+                            {t('General')}
+                            <h1 className="title">{t('Losses')}</h1>
+                            <div className="date">
+                                <div>{data?.data.date}</div>
+                                <div
+                                    className="day">{data?.data.day.toString()} {t('Day')}</div>
+                            </div>
+                        </Typist>
                     </div>
-                    <a href="https://www.mil.gov.ua/"><img src={milLogo}
-                                                           alt=""/></a>
+                    <a className='App-header__logo' href="https://www.mil.gov.ua/"><img className='logo__img' src={milLogo} alt=""/></a>
                 </header>
             </div>
 
@@ -57,12 +61,10 @@ const LossesList = () => {
                         <img src={people} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
                             <h2 className="current__title">{t('Personnel_units')}</h2>
+                            <div></div>
                             <CountUp className="quantity"
                                      end={data?.data.stats.personnel_units}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
-
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -72,9 +74,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Artillery_systems')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.artillery_systems}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -85,9 +85,7 @@ const LossesList = () => {
 
                             <CountUp className="quantity"
                                      end={data?.data.stats.planes}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}/>
+                                     duration={5}/>
                         </div>
                     </div>
                     <div className="losses__item">
@@ -96,9 +94,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Warships_cutters')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.warships_cutters}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
 
                             />
                         </div>
@@ -109,9 +105,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('ATGM_systems')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.atgm_srbm_systems}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -121,9 +115,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Tanks')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.tanks}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -133,9 +125,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('MLRS')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.mlrs}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -146,9 +136,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Helicopters')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.helicopters}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -158,9 +146,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('UAV_systems')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.uav_systems}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -170,9 +156,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Cruise_missiles')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.cruise_missiles}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -182,9 +166,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('AFV')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.armoured_fighting_vehicles}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -194,9 +176,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('AA_warfare_systems')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.aa_warfare_systems}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -206,9 +186,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Vehicles_and_fuel_tanks')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.vehicles_fuel_tanks}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>
@@ -218,9 +196,7 @@ const LossesList = () => {
                             <h2 className="current__title">{t('Special_military_equip')}</h2>
                             <CountUp className="quantity"
                                      end={data?.data.stats.special_military_equip}
-                                     scrollSpyOnce={true}
-                                     enableScrollSpy={true}
-                                     duration={3}
+                                     duration={5}
                             />
                         </div>
                     </div>

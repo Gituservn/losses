@@ -18,7 +18,22 @@ body{
   text-align: left;
   font-size: calc(10px + 2vmin);
   color: white;
+  justify-content: space-around;
+  position: relative;
 }
+.header__wrapper{
+  display: block;
+  width: 600px;
+}
+.App-header__logo{
+  height:  200px;
+  width: 200px;
+}
+
+.logo__img{
+  width: 100%;
+}
+
 
 .container {
 

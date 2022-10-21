@@ -44,7 +44,7 @@ body{
 }
 
 .buttons__lng-group{
-  display: flex;
+  display: none;
   justify-content: flex-end;
   margin: 15px;
 }

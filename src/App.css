@@ -1,6 +1,3 @@
-*{
-  margin: 0 auto;
-}
 
 body{
   background-image: url("./assets/images/ua.jpg");
@@ -8,6 +5,7 @@ body{
   height: 100%;
   background-size: cover;
   background-position: center;
+  margin: 0 auto;
 }
 
 .App {
@@ -28,6 +26,32 @@ body{
   justify-content: center;
   align-items: center;
   display: block;
+}
+
+.buttons__lng-group{
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+
+.button__ukr{
+  background-image: url("./assets/flags/ukraine.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 25px;
+  margin: 0 10px 0 0;
+
+}
+
+.button__eng{
+  background-image: url("./assets/flags/united-kingdom.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 25px;
 }
 
 

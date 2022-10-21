@@ -59,7 +59,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={people} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            <div className='increase'> + {data.data.increase.personnel_units>0 ? data.data.increase.personnel_units : 0 }</div>
+                            //<div className='increase'> + {data.data.increase.personnel_units>0 ? data.data.increase.personnel_units : 0 }</div>
                             <h2 className="current__title">{t('Personnel_units')}</h2>
 
                             <CountUp className="quantity"

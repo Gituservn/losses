@@ -59,7 +59,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={people} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.personnel_units>0 ? data.data.increase.personnel_units : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.personnel_units>0 ? data.data.increase.personnel_units : 0 }</div>
                             <h2 className="current__title">{t('Personnel_units')}</h2>
 
                             <CountUp className="quantity"
@@ -71,7 +71,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={art} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                           // <div className='increase'> + {data.data.increase.artillery_systems>0 ? data.data.increase.artillery_systems : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.artillery_systems>0 ? data.data.increase.artillery_systems : 0 }</div>
 
                             <h2 className="current__title">{t('Artillery_systems')}</h2>
                             <CountUp className="quantity"
@@ -83,7 +83,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={plane} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.planes>0 ? data.data.increase.planes : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.planes>0 ? data.data.increase.planes : 0 }</div>
 
                             <h2 className="current__title">{t('Planes')}</h2>
 
@@ -95,7 +95,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={ship} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.warships_cutters>0 ? data.data.increase.warships_cutters : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.warships_cutters>0 ? data.data.increase.warships_cutters : 0 }</div>
 
                             <h2 className="current__title">{t('Warships_cutters')}</h2>
                             <CountUp className="quantity"
@@ -108,7 +108,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={trk} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.atgm_srbm_systems>0 ? data.data.increase.atgm_srbm_systems : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.atgm_srbm_systems>0 ? data.data.increase.atgm_srbm_systems : 0 }</div>
 
                             <h2 className="current__title">{t('ATGM_systems')}</h2>
                             <CountUp className="quantity"
@@ -120,7 +120,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={tank} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                           // <div className='increase'> + {data.data.increase.tanks>0 ? data.data.increase.tanks : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.tanks>0 ? data.data.increase.tanks : 0 }</div>
 
                             <h2 className="current__title">{t('Tanks')}</h2>
                             <CountUp className="quantity"
@@ -132,7 +132,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={rszv} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.mlrs>0 ? data.data.increase.mlrs : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.mlrs>0 ? data.data.increase.mlrs : 0 }</div>
 
                             <h2 className="current__title">{t('MLRS')}</h2>
                             <CountUp className="quantity"
@@ -145,7 +145,7 @@ const LossesList = () => {
                         <img src={helicopter} alt=""
                              className="losses__item_img"/>
                         <div className="current__wrapper">
-                           // <div className='increase'> + {data.data.increase.helicopters>0 ? data.data.increase.helicopters : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.helicopters>0 ? data.data.increase.helicopters : 0 }</div>
 
                             <h2 className="current__title">{t('Helicopters')}</h2>
                             <CountUp className="quantity"
@@ -157,7 +157,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={bpla} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.uav_systems>0 ? data.data.increase.uav_systems : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.uav_systems>0 ? data.data.increase.uav_systems : 0 }</div>
 
                             <h2 className="current__title">{t('UAV_systems')}</h2>
                             <CountUp className="quantity"
@@ -169,7 +169,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={rocket} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.cruise_missiles>0 ? data.data.increase.cruise_missiles : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.cruise_missiles>0 ? data.data.increase.cruise_missiles : 0 }</div>
 
                             <h2 className="current__title">{t('Cruise_missiles')}</h2>
                             <CountUp className="quantity"
@@ -181,7 +181,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={bbm} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.armoured_fighting_vehicles>0 ? data.data.increase.armoured_fighting_vehicles : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.armoured_fighting_vehicles>0 ? data.data.increase.armoured_fighting_vehicles : 0 }</div>
 
                             <h2 className="current__title">{t('AFV')}</h2>
                             <CountUp className="quantity"
@@ -193,7 +193,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={ppo} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.aa_warfare_systems>0 ? data.data.increase.aa_warfare_systems : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.aa_warfare_systems>0 ? data.data.increase.aa_warfare_systems : 0 }</div>
 
                             <h2 className="current__title">{t('AA_warfare_systems')}</h2>
                             <CountUp className="quantity"
@@ -205,7 +205,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={auto} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                            //<div className='increase'> + {data.data.increase.vehicles_fuel_tanks>0 ? data.data.increase.vehicles_fuel_tanks : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.vehicles_fuel_tanks>0 ? data.data.increase.vehicles_fuel_tanks : 0 }</div>
 
                             <h2 className="current__title">{t('Vehicles_and_fuel_tanks')}</h2>
                             <CountUp className="quantity"
@@ -217,7 +217,7 @@ const LossesList = () => {
                     <div className="losses__item">
                         <img src={special} alt="" className="losses__item_img"/>
                         <div className="current__wrapper">
-                          //  <div className='increase'> + {data.data.increase.special_military_equip>0 ? data.data.increase.special_military_equip : 0 }</div>
+                            <div className='increase'> + {data?.data.increase.special_military_equip>0 ? data.data.increase.special_military_equip : 0 }</div>
 
                             <h2 className="current__title">{t('Special_military_equip')}</h2>
                             <CountUp className="quantity"

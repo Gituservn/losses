@@ -1,3 +1,4 @@
+import Header from "./components/Header/Header";
 import LossesList from "./components/LossesList/LossesList";
 import LngButton from "./components/Lng-button/LngButton";
 import i18n from "i18next";
@@ -27,6 +28,7 @@ function App() {
     return (
         <div className="App">
             <LngButton onChange={onChange}  />
+            <Header/>
             <LossesList/>
         </div>
     );

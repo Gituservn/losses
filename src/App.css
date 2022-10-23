@@ -1,71 +1,87 @@
 
-body{
-  background: rgb(2,0,36);
-  background: linear-gradient(184deg, rgba(2,0,36,1) 0%, rgba(39,39,186,1) 39%, rgba(241,255,0,1) 100%);
-  background-repeat: no-repeat;
-  height: 100%;
-  /*background-size: cover;*/
-  /*background-position: center;*/
-  margin: 0 auto;
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(184deg, rgba(2, 0, 36, 1) 0%, rgba(39, 39, 186, 1) 39%, rgba(241, 255, 0, 1) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    margin: 0 auto;
 }
 
+.dark-mode {
+    background: rgb(255,0,0);
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 37%, rgba(0,0,0,1) 60%);
+    color: white;
+}
+
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-header {
-  margin: 50px 20px 0 20px;
-  display: flex;
-  text-align: left;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  justify-content: space-between;
-  position: relative;
-}
-.header__wrapper{
-  display: block;
-  width: 600px;
-}
-.App-header__logo{
-  height:  200px;
-  width: 200px;
+    margin: 50px 20px 0 20px;
+    display: flex;
+    text-align: left;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    justify-content: space-between;
+    position: relative;
 }
 
-.logo__img{
-  width: 100%;
+.header__wrapper {
+    display: block;
+    width: 600px;
+}
+
+.App-header__logo {
+    height: 200px;
+    width: 200px;
+}
+
+.logo__img {
+    width: 100%;
 }
 
 
 .container {
-  justify-content: center;
-  align-items: center;
-  display: block;
+    justify-content: center;
+    align-items: center;
+    display: block;
 }
 
-.buttons__lng-group{
-  display: none;
-  justify-content: flex-end;
-  margin: 15px;
+.buttons__group {
+    display: flex;
+    justify-content: space-between;
 }
 
-.button__ukr{
-  background-image: url("./assets/flags/ukraine.png");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 25px;
-  margin: 0 10px 0 0;
+.buttons__lng-group {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+}
+
+.button__ukr {
+    cursor: pointer;
+    background-image: url("./assets/flags/ukraine.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 25px;
+    margin: 0 10px 0 0;
 
 }
 
-.button__eng{
-  background-image: url("./assets/flags/united-kingdom.png");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 25px;
+.button__eng {
+    cursor: pointer;
+    background-image: url("./assets/flags/united-kingdom.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 25px;
 }
 
 

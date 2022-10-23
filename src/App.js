@@ -1,6 +1,7 @@
+import {useState, useEffect} from "react";
 import Header from "./components/Header/Header";
 import LossesList from "./components/LossesList/LossesList";
-import LngButton from "./components/Lng-button/LngButton";
+import Buttons from "./components/Lng-button/Buttons";
 import i18n from "i18next";
 import './App.css';
 import {initReactI18next} from "react-i18next";
@@ -9,6 +10,16 @@ import translationsUk from "./locals/translationsUk";
 
 function App() {
 
+    const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("losses-dark-mode")) || false);
+
+    useEffect(() => {
+        localStorage.setItem('losses-dark-mode', JSON.stringify(darkMode));
+    }, [darkMode]);
+
+    useEffect(() => {
+        const saveDarkMode = JSON.parse(localStorage.getItem('losses-dark-mode'));
+        if(saveDarkMode){setDarkMode(saveDarkMode)}
+    },[]);
 
     i18n.use(initReactI18next).init({
         resources: {
@@ -24,13 +35,15 @@ function App() {
     };
 
 
-
     return (
-        <div className="App">
-            <LngButton onChange={onChange}  />
-            <Header/>
-            <LossesList/>
+        <div className={`${darkMode && 'dark-mode'}`}>
+            <div className="App">
+                <Buttons onChange={onChange} handleToggleDarkMode={setDarkMode} darkMode={darkMode}/>
+                <Header/>
+                <LossesList/>
+            </div>
         </div>
+
     );
 }
 

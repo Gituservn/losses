@@ -1,8 +1,9 @@
 import React from 'react';
 import CountUp from "react-countup";
-import {t} from "i18next";
+import {useTranslation} from "react-i18next";
 
 const LossesListItem = ({icon, title, increase, quantity}) => {
+    const {t} = useTranslation();
     return (
         <div>
             <div className="losses__item">

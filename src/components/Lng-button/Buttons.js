@@ -1,5 +1,4 @@
 import React from 'react';
-import night from './../../assets/icons/night_icon-icons.com_64989.svg'
 function Buttons({onChange,handleToggleDarkMode,darkMode,lang,setLang}) {
 
     return (

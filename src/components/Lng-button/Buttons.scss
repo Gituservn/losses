@@ -1,0 +1,18 @@
+
+.buttons__group {
+  margin: auto;
+  position: relative;
+  width: 180px;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .buttons__group {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

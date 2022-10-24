@@ -8,6 +8,7 @@ import {initReactI18next} from "react-i18next";
 import translationsEn from "./locals/translationsEn";
 import translationsUk from "./locals/translationsUk";
 
+
 function App() {
 
     const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("losses-dark-mode")) || false);

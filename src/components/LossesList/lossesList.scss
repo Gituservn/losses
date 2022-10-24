@@ -22,7 +22,6 @@
 
     .current__wrapper {
       width: 255.71px;
-      height: 135.74px;
       border-radius: 0 0 31px 31px / 0px 0px 31px 31px;
       background-color: rgba(255, 0, 0, 0);
       align-items: center;
@@ -39,7 +38,7 @@
       .increase {
         font-size: 30px;
         font-weight: bold;
-        color: red;
+        color: lawngreen;
       }
 
       .quantity {
@@ -59,20 +58,20 @@
 
 @media (max-width: 730px) {
   .header__wrapper {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 10px;
   }
   .losses__list {
     .losses__item {
       background: linear-gradient(90.71deg, rgba(245, 245, 245, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
+      margin: 20px 5px;
 
-      height: 70px;
-      width: 90%;
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
 
       &_img {
-        height: 60px;
+        height: 50px;
         width: auto;
         margin: 5px;
       }
@@ -80,8 +79,9 @@
       .current__wrapper {
         display: flex;
         flex-direction: row;
-        width: 70%;
+        width: 100%;
         justify-content: space-around;
+        padding: 15px ;
       }
     }
   }
@@ -96,7 +96,8 @@
       background: linear-gradient(90.71deg, rgba(245, 245, 245, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
       margin: 5px;
       height: 50px;
-      width: 95%;
+      border-radius: 0px;
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -117,7 +118,7 @@
           font-size: 15px;
         }
         .increase{
-          font-size: 18px;
+          font-size: 15px;
         }
 
       }

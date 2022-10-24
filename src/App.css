@@ -54,11 +54,20 @@ body {
 .buttons__group {
     display: flex;
     justify-content: space-between;
+
 }
 
 .buttons__lng-group {
     display: flex;
     justify-content: flex-end;
+    margin: 15px;
+}
+
+.darkMode{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
     margin: 15px;
 }
 

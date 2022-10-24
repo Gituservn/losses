@@ -9,7 +9,7 @@ import translationsEn from "./locals/translationsEn";
 import translationsUk from "./locals/translationsUk";
 
 function App() {
-
+    const [lang, setLang] = useState('ua');
     const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("losses-dark-mode")) || false);
 
     useEffect(() => {
@@ -32,15 +32,16 @@ function App() {
     });
     const onChange = (event) => {
         i18n.changeLanguage(event.target.value);
+        setLang(event.target.value)
     };
 
 
     return (
         <div className={`${darkMode && 'dark-mode'}`}>
             <div className="App">
-                <Buttons onChange={onChange} handleToggleDarkMode={setDarkMode} darkMode={darkMode}/>
+                <Buttons onChange={onChange} handleToggleDarkMode={setDarkMode} darkMode={darkMode} lang={lang} setLang={setLang}/>
                 <Header/>
-                <LossesList/>
+                <LossesList lang={lang}/>
             </div>
         </div>
 

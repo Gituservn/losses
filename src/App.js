@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import LossesList from "./components/LossesList/LossesList";
 import Buttons from "./components/Lng-button/Buttons";
 import i18n from "i18next";
-import './App.css';
+import './App.scss';
 import {initReactI18next} from "react-i18next";
 import translationsEn from "./locals/translationsEn";
 import translationsUk from "./locals/translationsUk";
@@ -20,6 +20,10 @@ function App() {
         const saveDarkMode = JSON.parse(localStorage.getItem('losses-dark-mode'));
         if(saveDarkMode){setDarkMode(saveDarkMode)}
     },[]);
+
+    useEffect(()=>{
+        setLang(lang)
+    },[lang])
 
     i18n.use(initReactI18next).init({
         resources: {

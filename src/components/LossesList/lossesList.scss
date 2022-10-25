@@ -9,6 +9,7 @@
     margin: 20px 40px 20px 40px;
     border: 1px none;
     border-radius: 31.2016px;
+    height: 355.462px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,7 @@
       .increase {
         font-size: 30px;
         font-weight: bold;
-        color: lawngreen;
+        color: #fc0000;
       }
 
       .quantity {
@@ -64,8 +65,9 @@
     .losses__item {
       background: linear-gradient(90.71deg, rgba(245, 245, 245, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
       margin: 20px 5px;
+      height: auto;
 
-      width: 100%;
+      width: 500px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -95,9 +97,10 @@
     .losses__item {
       background: linear-gradient(90.71deg, rgba(245, 245, 245, 0.2) 0%, rgba(255, 255, 255, 0.16) 100%);
       margin: 5px;
-      height: 50px;
+      height: auto;
+      width: 310px;
       border-radius: 0px;
-      width: 100%;
+      padding: 15px 0 15px 0;
       display: flex;
       flex-direction: row;
       justify-content: space-between;

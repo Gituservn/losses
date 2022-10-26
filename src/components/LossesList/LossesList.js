@@ -3,6 +3,8 @@ import useFetch from "../../services/useFetch";
 import LossesListItem from "../LossesListItem/LossesListItem";
 import './lossesList.scss';
 import {Animate,AnimateGroup} from "react-simple-animate";
+import {MagnifyingGlass} from "react-loader-spinner";
+
 
 const props ={
     start:{opacity:0},
@@ -26,8 +28,26 @@ const LossesList = ({lang}) => {
         error: error2
     } = useFetch('https://russianwarship.rip/api/v1/statistics/latest');
 
-     if(!data || !data2) return <h1> LOADING...</h1>;
-    if (loading || loading2) return <h1> LOADING...</h1>;
+     if(!data || !data2) return <MagnifyingGlass
+         visible={true}
+         height="80"
+         width="80"
+         ariaLabel="MagnifyingGlass-loading"
+         wrapperStyle={{}}
+         wrapperClass="MagnifyingGlass-wrapper"
+         glassColor = '#c0efff'
+         color = '#e15b64'
+     />
+    if (loading || loading2) return <MagnifyingGlass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="MagnifyingGlass-loading"
+        wrapperStyle={{}}
+        wrapperClass="MagnifyingGlass-wrapper"
+        glassColor = '#c0efff'
+        color = '#e15b64'
+    />
     if (error || error2) console.log('error');
 
 
@@ -137,17 +157,6 @@ const LossesList = ({lang}) => {
                                 icon={data?.data?.special_military_equip.icon}/>
 
                         </Animate>
-
-
-
-
-
-
-
-
-
-
-
 
                     </AnimateGroup>
 

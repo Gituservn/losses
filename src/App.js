@@ -30,12 +30,12 @@ function App() {
             en: {translation: translationsEn},
             uk: {translation: translationsUk},
         },
-        lng: 'uk',
+        lng: lang,
         fallbackLng: 'uk',
         interpolation: {escapeValue: false}
     });
     const onChange = (event) => {
-        i18n.changeLanguage(event.target.value);
+        // i18n.changeLanguage(event.target.value);
         setLang(event.target.value)
     };
 
